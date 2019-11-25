@@ -13,15 +13,14 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.5.2")
     testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.8")
+    testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.2")
 
     testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:2.0.8")
     testRuntimeOnly("org.jetbrains.kotlin:kotlin-reflect:1.3.60")
 }
 
 tasks.test {
-    useJUnitPlatform {
-        includeEngines("spek2")
-    }
+    useJUnitPlatform()
 }
 
 tasks.withType<KotlinCompile>().configureEach {

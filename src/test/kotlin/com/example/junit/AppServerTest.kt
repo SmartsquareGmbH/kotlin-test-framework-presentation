@@ -9,6 +9,7 @@ import io.mockk.junit5.MockKExtension
 import io.mockk.mockk
 import org.amshove.kluent.`should be`
 import org.amshove.kluent.`should contain`
+import org.amshove.kluent.`should equal`
 import org.amshove.kluent.`should not be null`
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -31,7 +32,7 @@ class AppServerTest {
 
         val updates = appServer.getAppUpdates("kuchen", Version.forIntegers(0))
         assertEquals(expectedVersions, updates)
-        updates `should be` expectedVersions
+        updates `should equal` expectedVersions
     }
 
     @Test

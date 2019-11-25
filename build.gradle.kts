@@ -10,9 +10,13 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.60")
+    implementation("com.github.zafarkhaja", "java-semver", "0.9.0")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.5.2")
+    testImplementation("org.junit.jupiter", "junit-jupiter-api", "5.5.2")
+    testImplementation("io.mockk", "mockk", "1.9.3")
     testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.8")
+    testImplementation("org.amshove.kluent", "kluent", "1.57")
     testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.2")
 
     testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:2.0.8")

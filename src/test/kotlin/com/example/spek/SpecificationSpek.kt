@@ -6,13 +6,15 @@ import org.spekframework.spek2.style.specification.describe
 
 /**
  * Basic example for the specification style of Spek2.
+ *
+ * Inspired by Jasmine and RSpec.
  */
-object CalculatorSpecificationSpek : Spek({
+object SpecificationSpek : Spek({
 
     describe("calculator") {
         val calculator = Calculator()
 
-        describe("subtraction") {
+        context("subtraction") {
             it("returns the correct result") {
                 assertEquals(-3, calculator.subtract(2, 5))
             }
@@ -23,16 +25,18 @@ object CalculatorSpecificationSpek : Spek({
                 assertEquals(7, calculator.add(2, 5))
             }
 
-            describe("data driven") {
-                class Calculation(val a: Int, val b: Int, val expected: Int)
+            context("data driven") {
+                data class Row(val a: Int, val b: Int, val expected: Int)
 
                 val data = listOf(
-                    Calculation(1, 2, 3),
-                    Calculation(-1, -2, -3),
-                    Calculation(1, 2, 3),
-                    Calculation(10000, 0, 10000)
+                    Row(1, 2, 3),
+                    Row(-1, -2, -3),
+                    Row(1, 2, 3),
+                    Row(10000, 0, 10000)
                 )
 
+                // There is no direct support for data driven tests, but we can use Kotlin's on board features,
+                // to generate tests in place.
                 data.forEach { calculation ->
                     it("returns ${calculation.expected} for ${calculation.a} + ${calculation.b}") {
                         assertEquals(calculation.expected, calculator.add(calculation.a, calculation.b))

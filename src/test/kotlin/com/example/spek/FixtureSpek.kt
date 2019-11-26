@@ -9,7 +9,7 @@ import org.spekframework.spek2.dsl.Skip
 /**
  * Example showing grouping and fixtures of Spek2.
  */
-object CustomerRepositorySpek : Spek({
+object FixtureSpek : Spek({
 
     val repository = CustomerRepository()
 
@@ -19,12 +19,18 @@ object CustomerRepositorySpek : Spek({
         repository.save(Customer(1, "Maike", 27))
     }
 
+    // Multiple variants are possible:
+    // beforeGroup {  }
+    // beforeEachGroup {  }
+
     group("find by age greater than 26") {
+        // Also possible to nest in here.
+
         test("size is 2") {
             assertEquals(2, repository.findByAgeGreaterThan(26).size)
         }
 
-        test ("first is Rolf") {
+        test("first is Rolf") {
             assertEquals("Rolf", repository.findByAgeGreaterThan(26).first().name)
         }
     }
@@ -55,7 +61,7 @@ object CustomerRepositorySpek : Spek({
             assertEquals(2, result.size)
         }
 
-        test ("first is Rolf") {
+        test("first is Rolf") {
             assertEquals("Rolf", result.first().name)
         }
     }
@@ -63,4 +69,8 @@ object CustomerRepositorySpek : Spek({
     afterEachTest {
         repository.clear()
     }
+
+    // Multiple variants are possible:
+    // afterGroup {  }
+    // afterEachGroup {  }
 })

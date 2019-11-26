@@ -6,8 +6,10 @@ import org.spekframework.spek2.style.gherkin.Feature
 
 /**
  * Basic example for the gherkin style of Spek2.
+ *
+ * Inspired by Cucumber.
  */
-object CalculatorGherkinSpek : Spek({
+object GherkinSpek : Spek({
 
     Feature("calculator") {
         val calculator = Calculator()

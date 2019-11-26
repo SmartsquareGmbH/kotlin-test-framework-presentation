@@ -6,7 +6,7 @@ import org.spekframework.spek2.Spek
 /**
  * Basic example for the default style of Spek2.
  */
-object CalculatorSpek : Spek({
+object SimpleSpek : Spek({
 
     group("calculator") {
         val calculator = Calculator()

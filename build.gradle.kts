@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.3.60"
+    kotlin("jvm") version "1.3.61"
 }
 
 repositories {
@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.60")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.61")
     implementation("com.github.zafarkhaja", "java-semver", "0.9.0")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.5.2")

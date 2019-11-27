@@ -12,9 +12,13 @@ import org.spekframework.spek2.style.gherkin.Feature
 object GherkinSpek : Spek({
 
     Feature("calculator") {
-        val calculator = Calculator()
-
         Scenario("addition") {
+            lateinit var calculator: Calculator
+
+            Given("a calculator") {
+                calculator = Calculator()
+            }
+
             var result = 0
 
             When("calculating 2 + 5") {

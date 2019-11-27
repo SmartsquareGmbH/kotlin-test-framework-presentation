@@ -1,8 +1,6 @@
 package com.example.junit
 
 import com.github.zafarkhaja.semver.Version
-import io.kotlintest.matchers.collections.shouldHaveSingleElement
-import io.kotlintest.matchers.collections.shouldHaveSize
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.junit5.MockKExtension
@@ -11,6 +9,8 @@ import org.amshove.kluent.`should be`
 import org.amshove.kluent.`should contain`
 import org.amshove.kluent.`should equal`
 import org.amshove.kluent.`should not be null`
+import org.amshove.kluent.shouldContainSame
+import org.amshove.kluent.shouldHaveSize
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -58,6 +58,6 @@ class AppServerTest {
         appUpdates `should contain` update
 
         // single test
-        appUpdates shouldHaveSingleElement update
+        appUpdates shouldContainSame listOf(update)
     }
 }

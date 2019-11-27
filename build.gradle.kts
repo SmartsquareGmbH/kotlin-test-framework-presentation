@@ -18,6 +18,7 @@ dependencies {
     testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.8")
     testImplementation("org.amshove.kluent", "kluent", "1.57")
     testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.2")
+    testImplementation("io.github.classgraph:classgraph:4.8.47")
 
     testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:2.0.8")
     testRuntimeOnly("org.jetbrains.kotlin:kotlin-reflect:1.3.60")
